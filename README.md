@@ -54,6 +54,9 @@ admin
 Password:
 apex123
 
+Live Demo:
+https://scintillating-torrone-d08d47.netlify.app/
+
 ---
 
 ## Tech Stack
