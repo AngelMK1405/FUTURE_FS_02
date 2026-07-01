@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex LeadFlow CRM</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginPage" class="login-page">
+  <div class="login-box">
+    <h1>Apex LeadFlow CRM</h1>
+    <p>Admin Access Only</p>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+
+    <small>Demo credentials: admin / apex123</small>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="hidden">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <h1>Apex LeadFlow CRM</h1>
+
+    <div class="topbar-actions">
+      <button id="themeToggle">🌙</button>
+      <button id="exportBtn">Export CSV</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats-grid">
+    <div class="stat-card">
+      <h2 id="totalLeads">0</h2>
+      <p>Total Leads</p>
+    </div>
+
+    <div class="stat-card">
+      <h2 id="newLeads">0</h2>
+      <p>New</p>
+    </div>
+
+    <div class="stat-card">
+      <h2 id="contactedLeads">0</h2>
+      <p>Contacted</p>
+    </div>
+
+    <div class="stat-card">
+      <h2 id="convertedLeads">0</h2>
+      <p>Converted</p>
+    </div>
+  </section>
+
+  <!-- SEARCH + FILTER -->
+  <section class="controls">
+    <input type="text" id="searchInput" placeholder="Search by name or email...">
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="New">New</button>
+      <button class="filter-btn" data-filter="Contacted">Contacted</button>
+      <button class="filter-btn" data-filter="Converted">Converted</button>
+    </div>
+  </section>
+
+  <!-- ADD LEAD FORM -->
+  <section class="lead-form-section">
+    <h2>Add New Lead</h2>
+
+    <form id="leadForm">
+      <input type="text" id="leadName" placeholder="Name">
+      <input type="email" id="leadEmail" placeholder="Email">
+
+      <select id="leadSource">
+        <option value="">Select Source</option>
+        <option>Website</option>
+        <option>Instagram</option>
+        <option>WhatsApp</option>
+        <option>Referral</option>
+      </select>
+
+      <select id="leadStatus">
+        <option>New</option>
+        <option>Contacted</option>
+        <option>Converted</option>
+      </select>
+
+      <textarea id="leadNotes" placeholder="Notes"></textarea>
+
+      <button type="submit">Add Lead</button>
+    </form>
+  </section>
+
+  <!-- DESKTOP TABLE -->
+  <section class="table-section">
+    <h2>Lead Database</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Source</th>
+            <th>Status</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="leadTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- MOBILE CARDS -->
+  <section id="mobileLeadCards" class="mobile-cards"></section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
